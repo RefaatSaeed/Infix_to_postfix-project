@@ -1,0 +1,3 @@
+D:/MINE/PR files/clion/2nd semester/infix2postfix_project/cmake-build-debug/CMakeFiles/infix2postfix_project.dir
+D:/MINE/PR files/clion/2nd semester/infix2postfix_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/MINE/PR files/clion/2nd semester/infix2postfix_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
