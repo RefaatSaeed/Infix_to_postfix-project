@@ -1,31 +1,31 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct {
-    char *ar;
+typedef struct{
+    float *ar;
     int top;
     int size;
-}stack;
+}istack;
 
-stack * intialize(int size){
-    stack *s=(stack *)malloc(sizeof(stack));
-    s->ar=(char *)malloc(sizeof(char)*size);
+istack * istack_intialize(int size){
+    istack *s=(istack *)malloc(sizeof(istack));
+    s->ar=(float *)malloc(sizeof(float )*size);
     s->top=0;
     s->size=size;
     return s;
 }
 
-bool is_empty(stack *s){
+bool is_empty(istack *s){
     if(s->top == 0) return true;
     else return false;
 }
 
-bool is_full(stack *s){
+bool is_full(istack *s){
     if(s->top == s->size) return true;
     else return false;
 }
 
-void push(stack *s,char value){
+void push(istack *s,float value){
     if(!is_full(s)){
         s->ar[s->top++]=value;
     }
@@ -33,7 +33,7 @@ void push(stack *s,char value){
         printf("Stack overflow,Can't push\n");
 }
 
-char pop(stack *s){
+float pop(istack *s){
     if(!is_empty(s)){
         s->top--;
         return s->ar[s->top];
@@ -41,24 +41,9 @@ char pop(stack *s){
     printf("Stack is already empty\n");
     return '\0';
 }
-
-char peek(stack *s){
+float  peek(istack *s){
     if(!is_empty(s))
         return s->ar[s->top-1];
     printf("Stack is already empty\n");
     return '\0';
 }
-
-void print_stack(stack *s){
-    printf("elements in the stack: \n");
-    for(int i=0;i<s->top;i++){
-        printf("%c ",s->ar[i]);
-    }
-    printf("\n");
-}
-
-
-
-
-
-

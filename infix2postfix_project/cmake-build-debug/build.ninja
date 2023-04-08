@@ -67,6 +67,12 @@ build CMakeFiles/infix2postfix_project.dir/infix_to_postfix.cpp.obj: CXX_COMPILE
   OBJECT_DIR = CMakeFiles\infix2postfix_project.dir
   OBJECT_FILE_DIR = CMakeFiles\infix2postfix_project.dir
 
+build CMakeFiles/infix2postfix_project.dir/intstack.cpp.obj: CXX_COMPILER__infix2postfix_project_Debug D$:/MINE/PR$ files/clion/2nd$ semester/infix2postfix_project/intstack.cpp || cmake_object_order_depends_target_infix2postfix_project
+  DEP_FILE = CMakeFiles\infix2postfix_project.dir\intstack.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\infix2postfix_project.dir
+  OBJECT_FILE_DIR = CMakeFiles\infix2postfix_project.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target infix2postfix_project
@@ -75,7 +81,7 @@ build CMakeFiles/infix2postfix_project.dir/infix_to_postfix.cpp.obj: CXX_COMPILE
 #############################################
 # Link the executable infix2postfix_project.exe
 
-build infix2postfix_project.exe: CXX_EXECUTABLE_LINKER__infix2postfix_project_Debug CMakeFiles/infix2postfix_project.dir/main.cpp.obj CMakeFiles/infix2postfix_project.dir/stack.cpp.obj CMakeFiles/infix2postfix_project.dir/infix_to_postfix.cpp.obj
+build infix2postfix_project.exe: CXX_EXECUTABLE_LINKER__infix2postfix_project_Debug CMakeFiles/infix2postfix_project.dir/main.cpp.obj CMakeFiles/infix2postfix_project.dir/stack.cpp.obj CMakeFiles/infix2postfix_project.dir/infix_to_postfix.cpp.obj CMakeFiles/infix2postfix_project.dir/intstack.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\infix2postfix_project.dir
