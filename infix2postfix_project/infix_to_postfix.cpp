@@ -3,11 +3,12 @@
 #include "header.h"
 #include<string.h>
 #include<ctype.h>
+#include<math.h>
 
 
 
 bool is_operator(char c){
-    if(c=='/' || c=='*' || c=='+' || c=='-')
+    if(c=='/' || c=='*' || c=='+' || c=='-' || c=='^')
         return true;
     else return false;
 }
@@ -23,7 +24,8 @@ int precedence(char c){
         return 0;
 }
 
-float calc(int op1,int op2,int c){
+float calc(float op1,float op2,int c){
+    float res;
     switch(c){
         case '+':
             return op1+op2;
@@ -32,7 +34,9 @@ float calc(int op1,int op2,int c){
         case '*':
             return op1*op2;
         case '/':
-            return (float)op1/(op2+0.0);
+            return op1/op2;
+        case'^':
+            return pow(op1,op2);
     }
 }
 
@@ -80,8 +84,8 @@ char * infix_to_postfix(char exp[],int length){
 float postfix_evaluation(char exp[]){
     istack *s= istack_intialize(strlen(exp)/2);
     char num[10];int j=0;
-    int x;
-    int op1,op2;
+    float x;
+    float op1,op2;
     float res;
     for(int i=0;i<strlen(exp);i++){
         if(isalnum(exp[i])){
@@ -89,7 +93,7 @@ float postfix_evaluation(char exp[]){
             num[j]='\0';
         }
         else if(exp[i]==' ' && j>0){
-                x=atoi(num);
+                x=atof(num);
                 push(s,(float)x);
                 j=0;
         }
